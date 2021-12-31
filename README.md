@@ -6,9 +6,9 @@
 * For loged in users log out
 
 ## Authorization
-*It has two distinctive actors:* 
-	1. Companies
-	2. Job seeker
+*It has two distinctive actors:*
+1. Companies
+2. Job seeker
 They have their own privileges with difference in functionality
 
 ## *Business feature 1*
