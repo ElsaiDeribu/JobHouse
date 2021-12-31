@@ -28,7 +28,7 @@ Companies can search for employees and vice versa
 We can create , read, update and delete search results
 
 
-##Group Members
+## *Group Members*
                               
 1. BEREKET TILAHUN                     UGR/9703/12
 2. DURESSA JEMAL                       UGR/3937/12
