@@ -28,6 +28,13 @@ Companies can search for employees and vice versa
 We can create , read, update and delete search results
 
 
+     NAME                                 ID
+• BEREKET TILAHUN                     UGR/9703/12
+• DURESSA JEMAL                       UGR/3937/12
+• YARED TSEGAYE                       UGR/8284/12   
+• YEABSIRA DRIBA                      UGR/4951/12
+• ELSAI DERIBU                        UGR/0066/12
+
 
  
 
