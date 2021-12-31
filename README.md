@@ -17,7 +17,7 @@
 *It has two distinctive actors:*
 1. Companies
 2. Job seeker
-#They have their own privileges with difference in functionality
+##They have their own privileges with difference in functionality
 
 ## *Business feature 1*
 Display a form after filled by the employee, companies can post a job vacancy 
@@ -28,7 +28,7 @@ Companies can search for employees and vice versa
 We can create , read, update and delete search results
 
 
-   NAME                                    ID
+                              
 1. BEREKET TILAHUN                     UGR/9703/12
 2. DURESSA JEMAL                       UGR/3937/12
 3. YARED TSEGAYE                       UGR/8284/12   
