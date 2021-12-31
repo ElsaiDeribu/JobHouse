@@ -8,7 +8,7 @@
   3. creaing a medium platform in which companies and employees can interact directly 
 
 
-## Authentication: 
+## Authentication
 * For unregistered users sign up 
 * For registered users log in
 * For loged in users log out
