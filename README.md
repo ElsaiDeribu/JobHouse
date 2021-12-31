@@ -27,6 +27,8 @@ We can create, read, update and delete a form and a job vacancy post
 Companies can search for employees and vice versa 
 We can create , read, update and delete search results
 
+## *Database* 
+We have chosen MySQL because it is a relational database which assigns data into table.
 
 ## *Group Members*
                               
