@@ -1,5 +1,13 @@
 # JobHouse
-  A web based application which provides a platform for finding jobs for unemployed people and finding competent candidates for companies.
+  A platform in which the future of job application is revolutionised through connecting a network of employees with potential employers and assisting employers get the employees that meets the requirements they specify and companies find applicants easily based on their profiles uploaded on the websites.
+  
+ This idea  solves the problem of:
+
+  1. having to apply for jobs  in person (solves the problem of remoteness of applicants )
+  2. companies do not get the employee with the specifications they require easly
+  3. creaing a medium platform in which companies and employees can interact directly 
+
+
 ## Authentication: 
 * For unregistered users sign up 
 * For registered users log in
