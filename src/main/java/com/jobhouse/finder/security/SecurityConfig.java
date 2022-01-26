@@ -22,9 +22,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     UserDetailsService userDetailsService;
 
-    // @Autowired
-    // AuthenticationSuccessHandler successHandler;
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
