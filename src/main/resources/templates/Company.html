@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        >
+    </head>
+    <body class="vh-100">
+        <div th:if="${company != null}">
+            <nav class="navbar bg-light shadow-lg navbar-expand-md  navbar-light">
+                <div class="container-xxl">
+                    <a href="#intro" class="navbar-brand">
+                        <span class="fw-bold text-secondary">JobHouse</span>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#main-nav"
+                        aria-controls="main-nav"
+                        aria-expanded="falsse"
+                        aria-label="toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon text-secondary bg-light"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item m-2">
+                                <span class="mb-5 me-2">
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                                        <div class="d-flex align-items-end">
+                                          <img class="rounded-circle" th:src="@{${company.photosImagePath}}" width="60px" height="60px">
+                                            <span class="fw-bold ms-2 mb-4 text-muted ">@
+                                              <span th:text="${userDetails.getUsername()}">
+                                                authenticated company
+                                              </span>
+                                            </span>
+                                        </div>
+                                    </button>
+                                    <div
+                                        class="modal fade"
+                                        id="reg-modal"
+                                        tabindex="-1"
+                                        aria-labelledby="modat-title"
+                                        aria-hidden="true"
+                                    >
+                                        <div class="modal-dialog  modal-dialog-scrollable modal-dialog-centered">
+                                            <div class="modal-content ">
+                                                <div class="modal-header border-0 ">
+                                                    <div class="modal-title">
+                                                        <div class="d-flex align-items-end">
+                                                          <img class="rounded-circle" th:src="@{${company.photosImagePath}}" width="60px" height="60px">
+                                                            <span class="fw-bold ms-2 mb-4 text-muted ">@
+                                                              <span th:text="${userDetails.getUsername()}">
+                                                                authenticated Employee
+                                                              </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <button
+                                                        type="button"
+                                                        class="btn-close mb-5 me-1"
+                                                        data-bs-dismiss="modal"
+                                                        aria-label="close"
+                                                    ></button>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                  <a class="nav-link p-3 m-3 btn text-light btn-primary" th:href="@{/post}">Create New Post</a>
+                                               
+                                                  <a class="nav-link p-3 m-3 btn text-light  btn-primary" th:href="@{'/'+${userDetails.getUsername()}+'/EditCompany'}">Edit Profile</a>
+                                                  <a class="nav-link p-3 m-3 btn text-light  btn-primary" th:href="@{/logout}">Logout</a>
+                                                  <a class="nav-link p-3 m-3 btn text-light  btn-danger" th:href="@{'/'+${userDetails.getUsername()}+'/EditCompany/deleteProfile'}">Delete Profile</a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </li>
+                           
+                           
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <h1 class="m-5 text-center">Your Posts</h1>
+            <div class="d-flex  flex-column align-items-center">
+                <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-6 col-xxl-5 ">
+                    <div th:each="post: ${posts}">
+                        <div class="card shadow-lg bg-light p-3 mb-5">
+                            <a th:href="@{${userDetails.getUsername()} + '/post/' + ${post.id}}">
+                                <img class="card-img-top image-fluid" th:src="${'data:image/jpeg;base64,' + {post.image}}" alt="post">
+                            </a>
+                            <div class="card-body">
+                                <!-- <a th:href="@{${userDetails.getUsername()} + '/post/' + ${post.id}}"> -->
+                                <h5 class="card-title" th:text="${post.getDescription()}">post description</h5>
+                                <!-- </a> -->
+                                <!-- <a th:href="@{${userDetails.getUsername()} + '/post/' + ${post.id}}"> -->
+                                <p class="card-text" th:text="${post.getDescription()}">post description</p>
+                                <!-- </a> -->
+                            </div>
+                            <a class="btn btn-primary " th:href="@{${userDetails.getUsername()} + '/post/' + ${post.id}}"> Inspect</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:if="${company == null}">
+            <div class="row vh-100 align-items-center justify-content-center">
+                <div class="col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 col-xxl-4 text-center">
+                    <div class="card p-5 shadow-lg bg-light">
+                        <div class="card-body">
+                            <div class="card-title mb-5">
+                                <h1 th:text="${userDetails.getUsername()}">authenticated Employee</h1>
+                                <p class="lead">complete your profile !</p>
+                            </div>
+                            <span class="circle">
+                                <i class="fa fa-check"></i>
+                            </span>
+                            <form
+                                th:action="@{'/'+${userDetails.getUsername()}+'/EditCompany'}"
+                                method="post"
+                                th:object="${companyProfile}"
+                                enctype="multipart/form-data"
+                            >
+                                <div class="form-input my-3">
+                                    <i class="fa fa-envelope-open"></i>
+                                    <input
+                                        th:field="*{location}"
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Location"
+                                        required
+                                    >
+                                    <p th:each="error: ${#fields.errors('location')}" th:text="${error}">Validation error</p>
+                                </div>
+                                <div class="form-input my-3">
+                                    <i class="fa fa-envelope-open"></i>
+                                    <label class="form-label text-muted" for="type">Type of company:</label>
+                                    <select
+                                        class="form-select form-select-md"
+                                        name="type"
+                                        id="type"
+                                        th:object="${type}"
+                                    >
+                                        <div th:each="t : ${types}">
+                                            <option th:value="${t}" th:text="${t}"></option>
+                                        </div>
+                                    </select>
+                                </div>
+                                <div class="form-input">
+                                    <i class="fa fa-envelope-open"></i>
+                                    <input type="hidden" th:field="*{logo}" id="blogId">
+                                </div>
+                                <div class="form-input text-muted">
+                                    <label class="form-label" for="img ">Logo:</label>
+                                    <input
+                                        class="form-control"
+                                        id="img"
+                                        type="file"
+                                        name="image"
+                                        required
+                                    >
+                                </div>
+                                <button class="btn btn-primary mt-5 mb-3" type="submit" value="submit">Submit</button>
+                                </br>
+                                <button class="btn btn-secondary" th:href="@{/logout}">logout</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>
