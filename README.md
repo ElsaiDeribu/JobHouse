@@ -24,8 +24,8 @@ Display a form after filled by the employee, companies can post a job vacancy
 We can create, read, update and delete a form and a job vacancy post
 
 ## *Business feature 2*
-Companies can search for employees and vice versa 
-We can create , read, update and delete search results
+Companies and Employee can edit and delete their profile based on  
+their preference and their status.
 
 ## *Database* 
 We have chosen MySQL because it is a relational database which assigns data into table.
