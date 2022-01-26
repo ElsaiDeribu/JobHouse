@@ -12,6 +12,7 @@ public class ImageConverter implements Converter<MultipartFile, String> {
 
     @Override
     public String convert(MultipartFile image) {
+        
         try {
             return Base64.getEncoder().encodeToString(image.getBytes());
         } catch (IOException e) {

@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class UserHelper {
 
+    
     private String username;
     private String full_name;
 

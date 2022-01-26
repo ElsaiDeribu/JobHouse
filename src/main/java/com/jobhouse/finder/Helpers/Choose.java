@@ -12,6 +12,6 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class Choose implements Serializable {
-    private static final long serialVersionUID = 1L;
-    public String choice;
+     private static final long serialVersionUID = 1L;
+     public String choice;
 }
