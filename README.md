@@ -38,6 +38,10 @@ We have chosen MySQL because it is a relational database which assigns data into
 4. YEABSIRA DRIBA                      UGR/4951/12
 5. ELSAI DERIBU                        UGR/0066/12
 
+## *Edited on 8:25 Jan 27 2022*
+We have populated an admin using commandline runner 
+Username:Admin
+Password:admin 
 
  
 
