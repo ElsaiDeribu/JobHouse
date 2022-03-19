@@ -29,19 +29,6 @@ their preference and their status.
 
 ## *Database* 
 We have chosen MySQL because it is a relational database which assigns data into table.
-
-## *Group Members*
-                              
-1. BEREKET TILAHUN                     UGR/9703/12
-2. DURESSA JEMAL                       UGR/3937/12
-3. YARED TSEGAYE                       UGR/8284/12   
-4. YEABSIRA DRIBA                      UGR/4951/12
-5. ELSAI DERIBU                        UGR/0066/12
-
-## *Edited on 8:25 Jan 27 2022*
-We have populated an admin using commandline runner 
-Username:Admin
-Password:admin 
-
  
-
+Username:Admin
+Password:admin
